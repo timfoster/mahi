@@ -75,7 +75,6 @@ BUILDIMAGE_NAME = manta-authcache
 BUILDIMAGE_DESC	= Manta authcache
 BUILDIMAGE_PKG	= $(PWD)/$(RELEASE_TARBALL)
 BUILDIMAGE_PKGSRC = redis-3.0.5
-BUILDIMAGE_STAGEDIR = /tmp/buildimage-$(NAME)-$(STAMP)
 AGENTS		= amon config registrar
 
 #
