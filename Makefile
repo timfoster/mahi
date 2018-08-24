@@ -87,7 +87,7 @@ all: $(SMF_MANIFESTS) | $(NODEUNIT) scripts
 $(NODEUNIT): | $(NPM_EXEC)
 	$(NPM) install
 
-CLEAN_FILES += $(NODEUNIT) ./node_modules/nodeunit $(NAME)-pkg-*.bz2
+CLEAN_FILES += $(NODEUNIT) ./node_modules/nodeunit
 DISTCLEAN_FILES += node_modules
 
 .PHONY: test
