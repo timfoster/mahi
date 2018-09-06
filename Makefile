@@ -66,7 +66,7 @@ else
 	include ./deps/eng/tools/mk/Makefile.node.defs
 endif
 include ./deps/eng/tools/mk/Makefile.smf.defs
-RELEASE_TARBALL	:= $(NAME)-pkg-$(STAMP).tar.bz2
+RELEASE_TARBALL	:= $(NAME)-pkg-$(STAMP).tar.gz
 RELSTAGEDIR     := /tmp/$(NAME)-$(STAMP)
 
 BASE_IMAGE_UUID = 04a48d7d-6bb5-4e83-8c3b-e60a99e0f48f
@@ -128,7 +128,7 @@ release: all docs $(SMF_MANIFESTS) deps/sdc-scripts/.git
 	cp -R $(TOP)/boot/* $(RELSTAGEDIR)/root/opt/smartdc/boot/
 	ln -s /opt/smartdc/$(NAME)/boot/scripts \
 		$(RELSTAGEDIR)/root/opt/smartdc/boot/scripts
-	(cd $(RELSTAGEDIR) && $(TAR) -jcf $(TOP)/$(RELEASE_TARBALL) root site)
+	(cd $(RELSTAGEDIR) && $(TAR) -I pigz -cf $(TOP)/$(RELEASE_TARBALL) root site)
 	@rm -rf $(RELSTAGEDIR)
 
 .PHONY: publish
