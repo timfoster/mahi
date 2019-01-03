@@ -5,7 +5,7 @@
 #
 
 #
-# Copyright (c) 2018, Joyent, Inc.
+# Copyright (c) 2019, Joyent, Inc.
 #
 
 #
@@ -73,7 +73,6 @@ RELSTAGEDIR     := /tmp/$(NAME)-$(STAMP)
 BASE_IMAGE_UUID = 04a48d7d-6bb5-4e83-8c3b-e60a99e0f48f
 BUILDIMAGE_NAME = manta-authcache
 BUILDIMAGE_DESC	= Manta authcache
-BUILDIMAGE_PKG	= $(PWD)/$(RELEASE_TARBALL)
 BUILDIMAGE_PKGSRC = redis-3.0.5
 AGENTS		= amon config registrar
 
